@@ -30,9 +30,14 @@ Example log output:
 ```bash
 git clone https://github.com/YOUR_USERNAME/event-driven-file-processor.git
 cd event-driven-file-processor
+### 2. Deploy infrastructure with Terraform
+```bash
 cd terraform
 terraform init
 terraform apply
+### 3. Test file with file upload to S3 bucket
+```bash
 ./scripts/upload-test-file.sh test.txt
+### 4. Verify CloudWatch Logs entries for event
 AWS Console → Lambda → event-file-processor → Monitor → CloudWatch Logs
-File uploaded to ryan-event-upload-bucket: test.txt
+Event: File uploaded to ryan-event-upload-bucket: test.txt
