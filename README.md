@@ -42,5 +42,5 @@ terraform apply
 ./scripts/upload-test-file.sh test.txt
 ```
 ### 4. Verify CloudWatch Logs entries for event
-AWS Console → Lambda → event-file-processor → Monitor → CloudWatch Logs
+AWS Console → Lambda → event-file-processor → Monitor → CloudWatch Logs  
 Event: File uploaded to ryan-event-upload-bucket: test.txt
