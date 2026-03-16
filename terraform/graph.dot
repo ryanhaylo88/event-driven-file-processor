@@ -1,0 +1,20 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "data.archive_file.lambda_zip" [label="data.archive_file.lambda_zip"];
+  "aws_iam_role.lambda_role" [label="aws_iam_role.lambda_role"];
+  "aws_iam_role_policy_attachment.lambda_basic_logs" [label="aws_iam_role_policy_attachment.lambda_basic_logs"];
+  "aws_iam_role_policy_attachment.lambda_s3_access" [label="aws_iam_role_policy_attachment.lambda_s3_access"];
+  "aws_lambda_function.file_processor" [label="aws_lambda_function.file_processor"];
+  "aws_lambda_permission.allow_s3" [label="aws_lambda_permission.allow_s3"];
+  "aws_s3_bucket.processed" [label="aws_s3_bucket.processed"];
+  "aws_s3_bucket.uploads" [label="aws_s3_bucket.uploads"];
+  "aws_s3_bucket_notification.upload_trigger" [label="aws_s3_bucket_notification.upload_trigger"];
+  "aws_iam_role_policy_attachment.lambda_basic_logs" -> "aws_iam_role.lambda_role";
+  "aws_iam_role_policy_attachment.lambda_s3_access" -> "aws_iam_role.lambda_role";
+  "aws_lambda_function.file_processor" -> "data.archive_file.lambda_zip";
+  "aws_lambda_function.file_processor" -> "aws_iam_role.lambda_role";
+  "aws_lambda_permission.allow_s3" -> "aws_lambda_function.file_processor";
+  "aws_lambda_permission.allow_s3" -> "aws_s3_bucket.uploads";
+  "aws_s3_bucket_notification.upload_trigger" -> "aws_lambda_permission.allow_s3";
+}
