@@ -4,7 +4,4 @@ resource "aws_s3_bucket" "uploads" {
 
 resource "aws_s3_bucket" "processed" {
   bucket = var.processed_bucket_name
-  tags = {
-    project = var.project
-  }
 }

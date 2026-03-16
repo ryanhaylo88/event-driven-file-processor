@@ -1,4 +1,9 @@
-variable "aws_region" {}
-variable "upload_bucket_name" {}
-variable "processed_bucket_name" {}
-variable "project" {}
+variable "aws_region" {
+  type = string
+}
+variable "upload_bucket_name" {
+  type = string
+}
+variable "processed_bucket_name" {
+  type = string
+}
