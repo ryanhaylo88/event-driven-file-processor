@@ -16,19 +16,7 @@ User uploads a file to S3 → S3 triggers Lambda → Lambda processes the event 
 - **AWS CLI** – Testing and file uploads
 ---
 ## Project Structure
-User
-|
-▼
-S3 Upload Bucket
-│
-▼
-S3 Event Trigger
-│
-▼
-Lambda Processor
-│
-▼
-CloudWatch Logs
+User -> S3 Upload Bucket -> S3 Event Trigger -> Lambda Processor -> CloudWatch Logs
 ---
 ## How It Works
 1. A file is uploaded to the **S3 uploads bucket**
