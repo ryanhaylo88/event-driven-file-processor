@@ -12,7 +12,6 @@ User uploads a file to S3 → S3 triggers Lambda → Lambda processes the event 
 - **AWS Lambda** – Serverless compute
 - **IAM** – Secure permissions for Lambda
 - **CloudWatch** – Logging and monitoring
-- **Docker** - *Will be added in future for Lambda document processing testing*
 - **AWS CLI** – Testing and file uploads
 ---
 ## Project Structure
